@@ -1,12 +1,14 @@
 import React from 'react';
 import './NavBar.css'
 
-function NavBar(props) {
+const NavBar = () => {
     return (
         <div >
             <ul className='nav'>
-                <li>Marca</li>
-                <li>Categorias</li>
+                <a id='home' href="./">CoderViajes</a>
+                <a href="./">Vuelos</a>
+                <a href="./">Alojamientos</a>
+                <a href="./">Actividades</a>
             </ul>
         </div>
     );

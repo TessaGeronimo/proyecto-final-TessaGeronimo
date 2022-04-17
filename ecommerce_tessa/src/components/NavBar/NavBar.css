@@ -2,4 +2,26 @@
     list-style-type: none;
     margin:0;
     padding: 0;
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
 }
+
+#home{
+    float: left;
+}
+
+.nav a{
+    text-decoration: none;
+    color:white;
+    padding: 14px 16px;
+    text-align: center;
+    display: inline-block;
+}
+
+.nav a:hover{
+    background-color: grey;
+}
+
+
+
