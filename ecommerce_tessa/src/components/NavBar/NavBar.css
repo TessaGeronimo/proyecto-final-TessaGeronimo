@@ -9,6 +9,11 @@
 
 #home{
     float: left;
+    font-weight: bold;
+}
+
+#cart{
+    float: right;
 }
 
 .nav a{
