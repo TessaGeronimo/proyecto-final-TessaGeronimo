@@ -1,0 +1,41 @@
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin:auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.amount {
+    
+    padding: 10px;
+    display: block;
+        
+}
+
+.amount button{
+    font-size: 18px;
+    text-align: center;
+}
+
+.amount input{
+    text-align: center;
+    font-size: 18px;
+    color:grey
+}
+
+#add{
+    border:none;
+    outline: 0;
+    padding: 12px;
+    color:white;
+    background: #000;
+    text-align: center;
+    cursor:pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover{
+    opacity: 0.7;
+}
