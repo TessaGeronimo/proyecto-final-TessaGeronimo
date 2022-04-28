@@ -1,18 +1,34 @@
-import React from 'react';
-import './ItemCount.css'
+import React, { useState } from 'react';
+import './ItemCount.css';
 
 const ItemCount = (props) => {
-    return (
-        <div classname = "ic">
-            <p> Viaje 1 </p>
-            <button>-</button>
-            
+    const [cant, setCant] = useState(props.inicial);
 
-            <input placeholder={props.stock}></input>
-            
-            
-            <button>+</button>
-            <button>Agregar</button>
+    const handleAdd = () =>{
+        if(cant<props.stock){
+            setCant(cant+1);
+        }
+    }
+
+    const handleMinus = () =>{
+        if(cant>0){
+            setCant(cant-1);
+        }    
+    }
+
+    const handleAddOn = () =>{
+        alert("Se agrego al carrito "+cant+" viaje")
+    }
+
+    return (
+        <div className="card">
+            <h2>Viaje</h2>
+            <div className='amount'>
+                <button onClick={() => {handleMinus()}}>-</button>
+                <input readOnly value={cant}></input>
+                <button onClick={()=>{handleAdd()}}>+</button>
+            </div>
+            <button id='add' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>
         </div>
     );
 };

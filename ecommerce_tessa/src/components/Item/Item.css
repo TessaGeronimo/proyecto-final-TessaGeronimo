@@ -6,24 +6,6 @@
     font-family: arial;
 }
 
-.amount {
-    
-    padding: 10px;
-    display: block;
-        
-}
-
-.amount button{
-    font-size: 18px;
-    text-align: center;
-}
-
-.amount input{
-    text-align: center;
-    font-size: 18px;
-    color:grey
-}
-
 #add{
     border:none;
     outline: 0;
