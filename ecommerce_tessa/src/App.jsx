@@ -5,13 +5,43 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <header className="App-header">
+    <div className='App'>
+       <NavBar/>
+     <div className = 'contenedor-elementos'>
         <ItemListContainer greetings="Bienvenido a CoderViajes"/> 
-        {/* <ItemDetailContainer></ItemDetailContainer> */}
-      </header>
-      
+     </div>
+     <div>
+       <p>hola</p>
+     </div>
+     <div className = 'contenedor-elementos'>
+        <div className = 'elementos'>
+          <p>2</p>
+        </div>
+        <div className = 'elementos'>
+          <p>3</p>
+        </div>
+        <div className = 'elementos'>
+          <p>4</p>
+        </div>
+        <div className = 'elementos'>
+          <p>2</p>
+        </div>
+        <div className = 'elementos'>
+          <p>3</p>
+        </div>
+        <div className = 'elementos'>
+          <p>4</p>
+        </div>
+        <div className = 'elementos'>
+          <p>2</p>
+        </div>
+        <div className = 'elementos'>
+          <p>3</p>
+        </div>
+        <div className = 'elementos'>
+          <p>4</p>
+        </div>
+     </div>
     </div>
   );
 }

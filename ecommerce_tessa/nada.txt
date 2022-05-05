@@ -1,0 +1,59 @@
+import './App.css';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+//import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+function App() {
+  return (
+     <div className="App">
+       <NavBar/>
+       <header className="App-header">
+         <ItemListContainer greetings="Bienvenido a CoderViajes"/> 
+         {/* <ItemDetailContainer></ItemDetailContainer> */}
+       </header>
+      
+      </div>
+   
+  );
+}
+
+export default App;
+
+.App {
+  text-align:center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
