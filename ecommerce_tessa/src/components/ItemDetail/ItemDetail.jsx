@@ -2,6 +2,7 @@ import React from 'react';
 import './ItemDetail.css'
 
 const ItemDetail = (props) => {
+    console.log(props.vueloDetail);
     return (
         <div className='item-detail'>
             <div className='left'>

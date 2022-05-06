@@ -8,15 +8,18 @@
 }
 
 #home{
-    float: left;
     font-weight: bold;
+    text-decoration: none;
+    color:white;
+    float: left;
+    padding: 14px 16px;
 }
 
 #cart{
     float: right;
 }
 
-.nav a{
+.nav li{
     text-decoration: none;
     color:white;
     padding: 14px 16px;
@@ -24,9 +27,16 @@
     display: inline-block;
 }
 
-.nav a:hover{
+#link:hover{
     background-color: grey;
 }
 
+#link{
+    text-decoration: none;
+    color:white;
+    padding: 14px 16px;
+    text-align: center;
+    display: inline-block;
+}
 
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import './Item.css';
+import {Link} from 'react-router-dom';
 
 const Item = (props) => {
-    console.log(props)
+
     return (
         <div className="card">
             <h2>{props.vuelo.destino}</h2>
@@ -10,7 +11,7 @@ const Item = (props) => {
             <div className='img-container'>
                 <img src= {props.vuelo.imageUrl} alt={props.vuelo.destino} ></img>
             </div>
-            <button id='add' >Detalle</button>
+            <Link id='add' to= {'/detalle/'+props.vuelo.id}>Detalle</Link>
         </div>
     );
 };
