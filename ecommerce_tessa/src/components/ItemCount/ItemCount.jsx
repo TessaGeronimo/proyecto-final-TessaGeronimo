@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ItemCount.css';
+import {Link} from 'react-router-dom';
 
 const ItemCount = (props) => {
     const [cant, setCant] = useState(props.inicial);
+    const [onAdd, setOnAdd] = useState(0);
 
     const handleAdd = () =>{
         if(cant<props.stock){
@@ -16,19 +18,25 @@ const ItemCount = (props) => {
         }    
     }
 
+    useEffect(() => {
+        console.log(onAdd)
+    },[onAdd])
+
     const handleAddOn = () =>{
-        alert("Se agrego al carrito "+cant+" viaje")
+        setOnAdd(cant);
+        alert("Se agrego al carrito "+cant+" viaje");
     }
 
     return (
         <div className="card">
-            <h2>Viaje</h2>
             <div className='amount'>
                 <button onClick={() => {handleMinus()}}>-</button>
                 <input readOnly value={cant}></input>
                 <button onClick={()=>{handleAdd()}}>+</button>
             </div>
-            <button id='add' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>
+            {onAdd===0? 
+            <button id='add' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>:
+            <Link id='add' to='/cart'>Terminar compra</Link>}        
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import './ItemDetail.css'
+import './ItemDetail.css';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = (props) => {
     console.log(props.vueloDetail);
@@ -15,6 +16,7 @@ const ItemDetail = (props) => {
                     <h2>{ props.vueloDetail.destino }</h2>
                     <p>{ props.vueloDetail.descripcion }</p>
                     <p>{ props.vueloDetail.precio }</p>
+                    <ItemCount stock={3} inicial={1} onAdd={0}></ItemCount>
                 </div>
             </div>
         </div>
