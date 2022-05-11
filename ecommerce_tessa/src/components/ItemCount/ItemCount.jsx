@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const ItemCount = (props) => {
     const [cant, setCant] = useState(props.inicial);
-    const [onAdd, setOnAdd] = useState(0);
+    const [onAdd, setOnAdd] = useState(props.onAdd);
 
     const handleAdd = () =>{
         if(cant<props.stock){
@@ -18,25 +18,24 @@ const ItemCount = (props) => {
         }    
     }
 
-    useEffect(() => {
-        console.log(onAdd)
-    },[onAdd])
+    // useEffect(() => {
+        
+    // },[onAdd])
 
     const handleAddOn = () =>{
         setOnAdd(cant);
-        alert("Se agrego al carrito "+cant+" viaje");
     }
 
     return (
-        <div className="card">
+        <div className="iccard">
             <div className='amount'>
                 <button onClick={() => {handleMinus()}}>-</button>
                 <input readOnly value={cant}></input>
                 <button onClick={()=>{handleAdd()}}>+</button>
             </div>
             {onAdd===0? 
-            <button id='add' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>:
-            <Link id='add' to='/cart'>Terminar compra</Link>}        
+            <button id='icadd' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>:
+            <Link to='/cart'><button id='icadd' >Terminar compra</button></Link>}        
         </div>
     );
 };

@@ -1,15 +1,21 @@
-.card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+.iccard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
     margin:auto;
     text-align: center;
     font-family: arial;
+    height:fit-content;
+    width: fit-content;  
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
 .amount {
     
     padding: 10px;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
         
 }
 
@@ -24,17 +30,20 @@
     color:grey
 }
 
-#add{
+#icadd{
     border:none;
     outline: 0;
-    padding: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     color:white;
     background: #000;
     text-align: center;
     cursor:pointer;
     width: 100%;
     font-size: 18px;
+    text-decoration: none;
 }
+
 
 .card button:hover{
     opacity: 0.7;
