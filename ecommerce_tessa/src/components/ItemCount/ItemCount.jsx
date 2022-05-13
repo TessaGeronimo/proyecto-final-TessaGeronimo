@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ItemCount.css';
 import {Link} from 'react-router-dom';
+
 
 const ItemCount = (props) => {
     const [cant, setCant] = useState(props.inicial);
     const [onAdd, setOnAdd] = useState(props.onAdd);
-
+   
     const handleAdd = () =>{
         if(cant<props.stock){
             setCant(cant+1);
@@ -26,6 +27,9 @@ const ItemCount = (props) => {
         setOnAdd(cant);
     }
 
+
+    
+
     return (
         <div className="iccard">
             <div className='amount'>
@@ -35,7 +39,7 @@ const ItemCount = (props) => {
             </div>
             {onAdd===0? 
             <button id='icadd' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>:
-            <Link to='/cart'><button id='icadd' >Terminar compra</button></Link>}        
+            <Link to='/cart'><button id='icadd'>Terminar compra</button></Link>}        
         </div>
     );
 };

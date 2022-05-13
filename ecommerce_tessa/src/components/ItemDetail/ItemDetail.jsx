@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
+import CartContext from '../CartContext/CartContext';
+
 
 const ItemDetail = (props) => {
-    console.log(props.vueloDetail);
+    const cartCtx = useContext(CartContext);
+
+    function addHandler(quantityToAdd) {
+        cartCtx.addProduct({quantity: quantityToAdd, ...props.vueloDetail});
+        console.log(cartCtx.products);
+    }
+    
     return (
         <div className='item-detail'>
             <div className='left'>
@@ -16,7 +24,7 @@ const ItemDetail = (props) => {
                     <h2>{ props.vueloDetail.destino }</h2>
                     <p>{ props.vueloDetail.descripcion }</p>
                     <p>{ props.vueloDetail.precio }</p>
-                    <ItemCount stock={props.vueloDetail.stock} inicial={0} onAdd={0}></ItemCount>
+                    <ItemCount stock={props.vueloDetail.stock} inicial={0} onAdd={addHandler}></ItemCount>
                 </div>
             </div>
         </div>
