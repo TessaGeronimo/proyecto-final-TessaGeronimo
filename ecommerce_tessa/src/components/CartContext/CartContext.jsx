@@ -1,61 +1,62 @@
-import React,{ createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-const CartContext = createContext({
-    products: [],
-    addProduct: () => {},
-    removeProduct: () => {},
-    clear: () => {},
-    isInCart: () => {},
-    getCartQuantity: () => {}
-});
+export const CartContext = createContext({});
 
-export const CartContextProvider = ({ children }) => {
-    const [productList, setProductList] = useState([]);
+export const useCartContext = () => useContext(CartContext);
 
-    const addProduct = (product) => {
-        const repeatedItemIndex = productList.findIndex(item => item.id === product.id)
-        if (repeatedItemIndex !== -1) {
-            setProductList(productList.map(p => p.id === product.id ? {...p, quantity: p.quantity + product.quantity} : p));
-        } else {
-            setProductList([product, ...productList]);
-        }
-    }
+const CartContextProvider = ({ children }) => {
+    const [cartList, setCartList] = useState([]);
 
-    const removeProduct = (id) => {
-        const indexToRemove = productList.findIndex(item => item.id === id);
-        if (productList[indexToRemove].quantity === 1) {
-            setProductList(productList.filter(i => i.id !== id))
-        } else {
-            setProductList(productList.map(p => p.id === id ? {...p, quantity: p.quantity - 1} : p));
-        }
-    }
+    const addProduct = (item, quantity) => {
+        console.log(item, quantity);
+        //if (isInCart(item.id)) {
+        //   return setCartList(
+        //     cartList.map((product) =>
+        //       product.id === item.id
+        //         ? { ...product, quantity: product.quantity + quantity }
+        //         : product
+        //     )
+        //   );
+        //}
+        setCartList([...cartList, { ...item, quantity }]);
+        console.log('cartList', cartList)
+    };
 
-    const clear = () => {
-        setProductList([]);
-    }
+    // const removeProduct = (id) => {
+    //     const indexToRemove = productList.findIndex(item => item.id === id);
+    //     if (productList[indexToRemove].quantity === 1) {
+    //         setProductList(productList.filter(i => i.id !== id))
+    //     } else {
+    //         setProductList(productList.map(p => p.id === id ? {...p, quantity: p.quantity - 1} : p));
+    //     }
+    // }
 
-    const isInCart = (id) => {
-        return productList.map(p => p.id).indexOf(id) !== -1;
-    }
+    // const clear = () => {
+    //     setProductList([]);
+    // }
 
-    const getCartQuantity = () => {
-        return productList.reduce((total, value) => {
-            return total + value.quantity
-        }, 0)
-    }
+    // const isInCart = (id) => {
+    //     return productList.map(p => p.id).indexOf(id) !== -1;
+    // }
+
+    // const getCartQuantity = () => {
+    //     return productList.reduce((total, value) => {
+    //         return total + value.quantity
+    //     }, 0)
+    // }
   
     return (
         <CartContext.Provider value={{
-            products: productList,
+            products: cartList,
             addProduct,
-            removeProduct,
-            clear,
-            isInCart,
-            getCartQuantity
+            // removeProduct,
+            // clear,
+            // isInCart,
+            // getCartQuantity
         }}>
             {children}
         </CartContext.Provider>
     )
 }
 
-export default CartContext;
+export default CartContextProvider;

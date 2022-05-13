@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 const ItemCount = (props) => {
     const [cant, setCant] = useState(props.inicial);
-    const [onAdd, setOnAdd] = useState(props.onAdd);
+    const [cartCant, setCartCant] = useState(0);
    
     const handleAdd = () =>{
         if(cant<props.stock){
@@ -19,16 +19,9 @@ const ItemCount = (props) => {
         }    
     }
 
-    // useEffect(() => {
-        
-    // },[onAdd])
-
-    const handleAddOn = () =>{
-        setOnAdd(cant);
+    const handleCartCant = () => {
+        setCartCant(cant);
     }
-
-
-    
 
     return (
         <div className="iccard">
@@ -37,9 +30,14 @@ const ItemCount = (props) => {
                 <input readOnly value={cant}></input>
                 <button onClick={()=>{handleAdd()}}>+</button>
             </div>
-            {onAdd===0? 
-            <button id='icadd' onClick={()=>{handleAddOn()}}>Agregar al carrito</button>:
-            <Link to='/cart'><button id='icadd'>Terminar compra</button></Link>}        
+            {cartCant===0? 
+                <button id='icadd' onClick={()=>{handleCartCant()}}>Agregar al carrito</button>:
+                <button id='icadd' onClick={()=>{props.onAdd(cartCant)}}>Terminar compra</button>
+            }               
+            {/* <Link to='/cart'><button id='icadd' onClick={()=>{props.onAdd(cartCant)}}>Terminar compra</button></Link> */}
+            {/* <button onClick={() => props.onAdd(cant)}>
+                 Agregar al carrito
+            </button>  */}
         </div>
     );
 };
