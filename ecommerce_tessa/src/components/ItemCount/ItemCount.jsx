@@ -25,19 +25,17 @@ const ItemCount = (props) => {
 
     return (
         <div className="iccard">
-            <div className='amount'>
-                <button onClick={() => {handleMinus()}}>-</button>
-                <input readOnly value={cant}></input>
-                <button onClick={()=>{handleAdd()}}>+</button>
-            </div>
             {cartCant===0? 
-                <button id='icadd' onClick={()=>{handleCartCant()}}>Agregar al carrito</button>:
-                <button id='icadd' onClick={()=>{props.onAdd(cartCant)}}>Terminar compra</button>
-            }               
-            {/* <Link to='/cart'><button id='icadd' onClick={()=>{props.onAdd(cartCant)}}>Terminar compra</button></Link> */}
-            {/* <button onClick={() => props.onAdd(cant)}>
-                 Agregar al carrito
-            </button>  */}
+                <>
+                <div className='amount'>
+                    <button onClick={() => {handleMinus()}}>-</button>
+                    <input readOnly value={cant}></input>
+                    <button onClick={()=>{handleAdd()}}>+</button>
+                </div>
+                <button id='icadd' onClick={()=>{handleCartCant()}}>Agregar al carrito</button>
+                </>:
+                <Link to='/cart' id='icadd' onClick={()=>{props.onAdd(cartCant)}}>Ver carrito</Link>
+            }                       
         </div>
     );
 };

@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import {useCartContext} from '../CartContext/CartContext';
+import {Link} from 'react-router-dom';
 
 
 const ItemDetail = ({vueloDetail}) => {
@@ -9,7 +10,6 @@ const ItemDetail = ({vueloDetail}) => {
 
     const addHandler = (quantityToAdd) => {
         addProduct(vueloDetail,quantityToAdd);
-        console.log('car', products);
     }
     
     return (

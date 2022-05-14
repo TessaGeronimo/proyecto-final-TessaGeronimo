@@ -61,7 +61,7 @@ const getVuelos = (categoria) => {
             },
             {
                 id:8,
-                destino:'Torre Eifel',
+                destino:'Torre Eiffel',
                 descripcion: 'Vale para dos personas',
                 categoria:'actividades',
                 precio: '$700',

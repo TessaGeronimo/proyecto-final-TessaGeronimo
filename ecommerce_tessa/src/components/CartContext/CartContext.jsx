@@ -8,51 +8,25 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addProduct = (item, quantity) => {
-        console.log(item, quantity);
-        //if (isInCart(item.id)) {
-        //   return setCartList(
-        //     cartList.map((product) =>
-        //       product.id === item.id
-        //         ? { ...product, quantity: product.quantity + quantity }
-        //         : product
-        //     )
-        //   );
-        //}
+        console.log(isInCart(item.id));
+        if(isInCart(item.id)){
+            console.log("entro");
+            return setCartList(cartList.map(cl => (cl.id===item.id? 
+                ({...cl,quantity: cl.quantity+quantity}):cl)));
+        }        
         setCartList([...cartList, { ...item, quantity }]);
-        console.log('cartList', cartList)
     };
 
-    // const removeProduct = (id) => {
-    //     const indexToRemove = productList.findIndex(item => item.id === id);
-    //     if (productList[indexToRemove].quantity === 1) {
-    //         setProductList(productList.filter(i => i.id !== id))
-    //     } else {
-    //         setProductList(productList.map(p => p.id === id ? {...p, quantity: p.quantity - 1} : p));
-    //     }
-    // }
+    const isInCart = (id) => {
+        return cartList.some((cl)=>cl.id===id);
+    }
 
-    // const clear = () => {
-    //     setProductList([]);
-    // }
 
-    // const isInCart = (id) => {
-    //     return productList.map(p => p.id).indexOf(id) !== -1;
-    // }
-
-    // const getCartQuantity = () => {
-    //     return productList.reduce((total, value) => {
-    //         return total + value.quantity
-    //     }, 0)
-    // }
   
     return (
         <CartContext.Provider value={{
             products: cartList,
             addProduct,
-            // removeProduct,
-            // clear,
-            // isInCart,
-            // getCartQuantity
         }}>
             {children}
         </CartContext.Provider>

@@ -64,7 +64,7 @@ function getDetail(id) {
             },
             {
                 id:8,
-                destino:'Torre Eifel',
+                destino:'Torre Eiffel',
                 descripcion: 'Vale para dos personas',
                 precio: '$700',
                 imageUrl:'https://i0.wp.com/hipertextual.com/wp-content/uploads/2013/04/Paris.jpg?w=1024&quality=50&strip=all&ssl=1',
