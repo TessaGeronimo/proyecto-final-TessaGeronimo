@@ -10,7 +10,7 @@ function getDetail(id) {
                 id:1,
                 destino:'Barcelona',
                 descripcion: 'Salida desde Buenos Aires clase Ejecutiva',
-                precio: '$90000',
+                precio: 90000,
                 imageUrl:'https://images.adsttc.com/media/images/5ff4/88a7/63c0/17cd/f900/0527/medium_jpg/shutterstock_397537417.jpg?1609861261',
                 stock:10
             },
@@ -18,7 +18,7 @@ function getDetail(id) {
                 id:2,
                 destino:'Paris',
                 descripcion: 'Salida desde Buenos Aires clase Ejecutiva',
-                precio: '$70000',
+                precio: 70000,
                 imageUrl:'https://i0.wp.com/hipertextual.com/wp-content/uploads/2013/04/Paris.jpg?w=1024&quality=50&strip=all&ssl=1',
                 stock:7
             },
@@ -26,7 +26,7 @@ function getDetail(id) {
                 id:3,
                 destino:'Londres',
                 descripcion: 'Salida desde Buenos Aires clase Ejecutiva',
-                precio: '$80000',
+                precio: 80000,
                 imageUrl:'https://resizer.glanacion.com/resizer/Ug6L5UfHTETFMxSKy6P5hfP5m58=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/HGNP4GG2WFAZHKAI2NU4Q54W5Y.jpg',
                 stock:6
             },
@@ -34,7 +34,7 @@ function getDetail(id) {
                 id:4,
                 destino:'Hotel Barcelona',
                 descripcion: 'Estadía en Hotel Barcelona para 2 Personas.',
-                precio: '$9000',
+                precio: 9000,
                 imageUrl:'https://images.adsttc.com/media/images/5ff4/88a7/63c0/17cd/f900/0527/medium_jpg/shutterstock_397537417.jpg?1609861261',
                 stock:11
             },
@@ -42,7 +42,7 @@ function getDetail(id) {
                 id:5,
                 destino:'Hotal Paris',
                 descripcion: 'Estadía en Hotel Paris para 2 Personas.',
-                precio: '$7000',
+                precio: 7000,
                 imageUrl:'https://i0.wp.com/hipertextual.com/wp-content/uploads/2013/04/Paris.jpg?w=1024&quality=50&strip=all&ssl=1',
                 stock:8
             },
@@ -50,7 +50,7 @@ function getDetail(id) {
                 id:6,
                 destino:'Londres',
                 descripcion: 'Estadía en Hotel Londres para 2 Personas.',
-                precio: '$8000',
+                precio: 8000,
                 imageUrl:'https://resizer.glanacion.com/resizer/Ug6L5UfHTETFMxSKy6P5hfP5m58=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/HGNP4GG2WFAZHKAI2NU4Q54W5Y.jpg',
                 stock:3
             },
@@ -58,7 +58,7 @@ function getDetail(id) {
                 id:7,
                 destino:'Camp Nou',
                 descripcion: 'Vale para dos personas',
-                precio: '$900',
+                precio: 900,
                 imageUrl:'https://images.adsttc.com/media/images/5ff4/88a7/63c0/17cd/f900/0527/medium_jpg/shutterstock_397537417.jpg?1609861261',
                 stock:12
             },
@@ -66,7 +66,7 @@ function getDetail(id) {
                 id:8,
                 destino:'Torre Eiffel',
                 descripcion: 'Vale para dos personas',
-                precio: '$700',
+                precio: 700,
                 imageUrl:'https://i0.wp.com/hipertextual.com/wp-content/uploads/2013/04/Paris.jpg?w=1024&quality=50&strip=all&ssl=1',
                 stock:10
             },
@@ -74,7 +74,7 @@ function getDetail(id) {
                 id:9,
                 destino:'London Eye',
                 descripcion: 'Vale para dos personas',
-                precio: '$800',
+                precio: 800,
                 imageUrl:'https://resizer.glanacion.com/resizer/Ug6L5UfHTETFMxSKy6P5hfP5m58=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/HGNP4GG2WFAZHKAI2NU4Q54W5Y.jpg',
                 stock:14
             },

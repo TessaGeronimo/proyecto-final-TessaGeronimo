@@ -1,3 +1,8 @@
+.carrito{
+    display: flex;
+    flex-direction: row;
+}
+
 .cwnumber{
     color:white;
     width: 20px;
