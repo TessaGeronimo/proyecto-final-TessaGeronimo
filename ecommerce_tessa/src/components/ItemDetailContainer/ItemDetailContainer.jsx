@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
-import './ItemDetailContainer.css'
+import './ItemDetailContainer.css';
+import db from '../../firebase/firebase';
+import { doc, getDoc } from "firebase/firestore";
 
-function getDetail(id) {
+/* function getDetail(id) {
     const myPromise = new Promise((resolve, reject) => {
         const vuelosList = [
             {
@@ -85,6 +87,12 @@ function getDetail(id) {
       }, 2000);
     });
     return myPromise;
+} */
+
+const getDetail = (id) =>{
+    const detail = doc(db,'items',id);
+    
+    return getDoc(detail);
 }
 
 function ItemDetailContainer() {
@@ -92,9 +100,10 @@ function ItemDetailContainer() {
     const {id} = useParams();
 
     useEffect(() => {
+        console.log('id',id);
         getDetail(id)
             .then(res => {
-                setVueloDetail(res);
+                setVueloDetail({...res.data(),id: res.id});
             })
     }, [id]);
 

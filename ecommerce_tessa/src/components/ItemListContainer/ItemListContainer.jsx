@@ -2,8 +2,10 @@ import React, {useEffect, useState} from "react";
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
+import db from '../../firebase/firebase';
+import { collection, getDocs, query, where } from "firebase/firestore";
 
-const getVuelos = (categoria) => {
+/* const getVuelos = (categoria) => {
     const myPromise = new Promise((resolve, reject) => {
         const vuelosList = [
             {
@@ -82,18 +84,27 @@ const getVuelos = (categoria) => {
       }, 2000);
     });
     return myPromise;
+  } */
+
+  const getVuelos = (categoria) =>{
+      
+    const itemCollection = collection(db,'items');
+    
+    const q = categoria? query(itemCollection, where('categoria','==',categoria)): itemCollection;
+
+    return getDocs(q);
   }
 
-const ItemListContainer = (props) =>{
+  const ItemListContainer = (props) =>{
 
-    const [vuelos, setVuelos] = useState([]);
+    const [vuelos, setVuelos] = useState([]);  
     const {categoria} = useParams();
 
     useEffect(() => {
         getVuelos(categoria)
-        .then(res => {
-            setVuelos(res);
-        })
+          .then(res => {
+              setVuelos(res.docs.map(doc => {return {...doc.data(),id: doc.id}}));
+          })
     }, [categoria]);
 
     return(
