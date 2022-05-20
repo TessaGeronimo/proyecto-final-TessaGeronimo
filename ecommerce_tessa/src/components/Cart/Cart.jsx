@@ -31,6 +31,9 @@ const Cart = () => {
                 <div className="total">
                     <p>Total ${totalAmount()}</p>
                 </div>
+                <div>
+                    <button>Finalizar Compra</button>
+                </div>
                 </>
             }
             
