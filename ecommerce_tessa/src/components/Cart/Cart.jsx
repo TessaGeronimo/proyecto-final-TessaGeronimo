@@ -32,11 +32,10 @@ const Cart = () => {
                     <p>Total ${totalAmount()}</p>
                 </div>
                 <div>
-                    <button>Finalizar Compra</button>
+                    <Link to= {'/userData'}>Finalizar Compra</Link>
                 </div>
                 </>
             }
-            
         </div>
     );
 }   
