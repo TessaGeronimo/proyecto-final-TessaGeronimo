@@ -1,6 +1,7 @@
 .App {
   text-align:center;
   height: 100%;
+  background: #fff url(./images/cool-background.png) center top/cover no-repeat;
 }
 
 .App-logo {
@@ -17,7 +18,7 @@
 .App-header {
   /*background-color: white;*/
   /*background: #fff url(https://c.pxhere.com/photos/75/fc/camera_glasses_magnifying_glass_map_maps_notebook_notepad_notes-913960.jpg!s2) center top/cover no-repeat;*/
-  background: #fff url(./images/cool-background.png) center top/cover no-repeat;
+  /* background: #fff url(./images/cool-background.png) center top/cover no-repeat; */
   /*filter: blur(2px);*/
   min-height: 100%;
   display: flex;
