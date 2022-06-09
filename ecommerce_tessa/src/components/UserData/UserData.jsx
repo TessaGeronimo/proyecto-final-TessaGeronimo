@@ -48,29 +48,35 @@ const UserData = () => {
     }
     
     return(
-        <>
-            <div className="udcontainer">
-                <form onSubmit={handleSubmit}>
+        <>  
+            {idVenta===0?
+            <div>
+                <form className="udcontainer" onSubmit={handleSubmit}>
                     <input type= 'text' name='Nombre' placeholder="Nombre" value={Nombre} onChange={handleInputChange} required></input>
                     <input type= 'text' name='Apellido' placeholder="Apellido" value={Apellido} onChange={handleInputChange} required></input>
                     <input type= 'number' name='Telefono' placeholder="Telefono" value={Telefono} onChange={handleInputChange} required></input>
                     <input type= 'email' name= 'Email' placeholder="e-mail" value={Email} onChange={handleInputChange} required></input>
                     <button type="submit">Terminar Compra</button>
                 </form>
-            </div>
+            </div>:
             <div>
-                {
-                    idVenta&&(
-                        <div>
-                            <h4>Ya tenés tu CoderViaje!!</h4>
-                            <h4>{`Tú código de compra es: ${idVenta}`}</h4>
-                            <Link to="/"><h5>Volver al inicio</h5></Link>
-                        </div>
-                        )
-                }
+                <h4>Ya tenés tu CoderViaje!!</h4>
+                <h4>{`Tú código de compra es: ${idVenta}`}</h4>
+                <Link to="/"><h5>Volver al inicio</h5></Link>    
             </div>
+            }
         </>
     );
 }
 
 export default UserData;
+
+{/*
+    idVenta&&(
+        <div>
+            <h4>Ya tenés tu CoderViaje!!</h4>
+            <h4>{`Tú código de compra es: ${idVenta}`}</h4>
+            <Link to="/"><h5>Volver al inicio</h5></Link>
+        </div>
+        )
+    */}

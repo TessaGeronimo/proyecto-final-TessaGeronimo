@@ -18,13 +18,14 @@ const Cart = () => {
                     <Link to={'/'}>Volver al inicio</Link>
                 </div>:
                 <>
-                <button onClick={()=>clear()}>Vaciar carrito</button>    
+                <button className="btn" onClick={()=>clear()}>Vaciar carrito</button>    
                 {products.map((p,i)=>(<div className="cartCard">
                     <p>#{i+1}</p>
+                    <p className="categoria">{p.categoria}</p>
                     <p>{p.destino}</p>
                     <p>{p.quantity}</p>
                     <p>{p.precio}</p>
-                    <button onClick={() => removeItem(p.id)}>Eliminar</button>
+                    <button className="btn-eliminar" onClick={() => removeItem(p.id)}>Eliminar</button>
                     </div>)
                 )}
                     
@@ -32,7 +33,7 @@ const Cart = () => {
                     <p>Total ${totalAmount()}</p>
                 </div>
                 <div>
-                    <Link to= {'/userData'}>Finalizar Compra</Link>
+                    <Link className="btn" to= {'/userData'}>Finalizar Compra</Link>
                 </div>
                 </>
             }

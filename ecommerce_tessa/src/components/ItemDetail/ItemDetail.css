@@ -50,3 +50,7 @@
 .detail p{
     color:darkgray
 }
+
+.detail h1{
+    text-transform: uppercase;
+}

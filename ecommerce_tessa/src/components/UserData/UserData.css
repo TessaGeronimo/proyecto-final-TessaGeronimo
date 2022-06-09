@@ -4,3 +4,19 @@
     align-items: center;
     padding: 12px;
 }
+
+.udcontainer input{
+    margin:5px;
+    font-size: 20px;
+    width: 60%;
+}
+
+.udcontainer button{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}

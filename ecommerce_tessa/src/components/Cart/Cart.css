@@ -11,3 +11,27 @@
     font-size: xx-large;
     font-weight: bolder;
 }
+
+.categoria{
+    text-transform: uppercase;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-eliminar{
+    border-radius: 5px;
+    border-color: red;
+    background-color: white;
+    color: red;
+    font-size: 12px;
+    cursor: pointer;
+    
+}

@@ -21,9 +21,10 @@ const ItemDetail = ({vueloDetail}) => {
             </div>
             <div className='right'>
                 <div className='detail'>
-                    <h2>{ vueloDetail.destino }</h2>
-                    <p>{ vueloDetail.descripcion }</p>
-                    <p>{ vueloDetail.precio }</p>
+                    <h1>{vueloDetail.categoria}</h1>                    
+                    <h2>{vueloDetail.destino}</h2>
+                    <p>{vueloDetail.descripcion}</p>
+                    <p>${vueloDetail.precio}</p>
                     <ItemCount stock={vueloDetail.stock} inicial={0} onAdd={addHandler}></ItemCount>
                 </div>
             </div>
